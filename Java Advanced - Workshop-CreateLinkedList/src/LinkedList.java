@@ -124,4 +124,38 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    public void addAfter(int searchElement, int newElement){
+        if(this.isEmpty()){
+            throw new InvalidDnDOperationException("addAfter on empty list");
+        }
+
+        Node current = this.head;
+        while ((current != null)){
+            if(current.value == searchElement){
+                Node newNode = new Node(newElement);
+
+                newNode.next = current.next;
+                newNode.prev = current;
+
+                if(current.next != null){
+                    current.next.prev = newNode;
+                }else{
+                    this.tail = newNode;
+
+                }
+
+                current.next = newNode;
+
+                this.size++;
+                return;
+            }
+
+            current = current.next;
+        }
+
+
+    }
+
+
 }

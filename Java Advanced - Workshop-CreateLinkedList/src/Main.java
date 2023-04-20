@@ -20,7 +20,7 @@ public class Main {
         System.out.println(list.getSize());
         System.out.println("***********************************");
 
-        //testing method removeFirst
+        /*//testing method removeFirst
         System.out.println(list.removeFirst());
         System.out.println(list.getSize());
         System.out.println(list.getHead().value);
@@ -32,7 +32,25 @@ public class Main {
         System.out.println(list.getTail().value);
 
         //testing method forEach
-        list.forEach(e-> System.out.println(e));
+        list.forEach(e-> System.out.println(e));*/
+
+
+        //testing method addAfter
+        list.addAfter(5,7);
+        list.forEach(e-> System.out.printf("%d ",e));
+        System.out.println();
+        System.out.println("***************************");
+
+        list.addAfter(3, 25);
+        list.forEach(e-> System.out.printf("%d ",e));
+        System.out.println();
+        System.out.println("***************************");
+
+
+        /*//error
+        list.addAfter(10,111);
+        list.forEach(e-> System.out.print(e));
+        System.out.println("***************************");*/
 
 
     }
