@@ -139,7 +139,7 @@ public class LinkedList {
                 newNode.prev = current;
 
                 if(current.next != null){
-                    current.next.prev = newNode;
+                    newNode.next.prev = newNode;
                 }else{
                     this.tail = newNode;
 
