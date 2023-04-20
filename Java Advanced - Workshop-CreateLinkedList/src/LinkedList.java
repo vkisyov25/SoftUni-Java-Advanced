@@ -154,6 +154,36 @@ public class LinkedList {
             current = current.next;
         }
 
+    }
+
+    public int removeAfter(int searchElement){
+        if(this.isEmpty()){
+            throw new InvalidDnDOperationException("addAfter on empty list");
+        }
+        Node current = this.head;
+        while ((current != null)){
+            if(current.value == searchElement){
+                Node forDelitions = current.next;
+
+                if(forDelitions==null){
+                    throw  new InvalidDnDOperationException("no element after search element");
+                }
+                current.next = current.next.next;
+                if(current.next == null){
+                    this.tail = current;
+                }else {
+                    current.next.prev = current;
+                }
+
+                forDelitions.next = null;
+                forDelitions.prev = null;
+
+                return forDelitions.value;
+            }
+
+            current = current.next;
+        }
+        throw new InvalidDnDOperationException("not found");
 
     }
 

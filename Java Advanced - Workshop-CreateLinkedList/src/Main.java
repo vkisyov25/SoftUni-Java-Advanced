@@ -53,5 +53,21 @@ public class Main {
         System.out.println("***************************");*/
 
 
+        list.removeAfter(3);
+        list.forEach(e-> System.out.printf("%d ",e));
+        System.out.println();
+        System.out.println("--------------------------");
+
+        list.removeAfter(8);
+        list.forEach(e-> System.out.printf("%d ",e));
+        System.out.println();
+        System.out.println("---------------------------");
+
+        /*//error
+        list.removeAfter(3); list.forEach(e-> System.out.printf("%d ",e));
+        System.out.println();
+        System.out.println("***************************");*/
+
+
     }
 }
